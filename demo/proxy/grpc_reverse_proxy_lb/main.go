@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/e421083458/gateway_demo/proxy/load_balance"
-	proxy2 "github.com/e421083458/gateway_demo/proxy/proxy"
+	"github.com/perlou/go-gateway-demo/proxy/load_balance"
+	proxy2 "github.com/perlou/go-gateway-demo/proxy/proxy"
 	"github.com/e421083458/grpc-proxy/proxy"
 	"google.golang.org/grpc"
 	"log"

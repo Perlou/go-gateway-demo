@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/e421083458/gateway_demo/demo/proxy/reverse_proxy_https/public"
-	"github.com/e421083458/gateway_demo/demo/proxy/reverse_proxy_https/testdata"
+	"github.com/perlou/go-gateway-demo/demo/proxy/reverse_proxy_https/public"
+	"github.com/perlou/go-gateway-demo/demo/proxy/reverse_proxy_https/testdata"
 	"golang.org/x/net/http2"
 	"log"
 	"net/http"

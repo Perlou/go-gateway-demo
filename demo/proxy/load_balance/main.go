@@ -2,7 +2,7 @@ package main
 
 import (
 	"bytes"
-	"github.com/e421083458/gateway_demo/proxy/load_balance"
+	"github.com/perlou/go-gateway-demo/proxy/load_balance"
 	"io/ioutil"
 	"log"
 	"net"

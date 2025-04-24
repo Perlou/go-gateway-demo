@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	gw "github.com/e421083458/gateway_demo/demo/proxy/grpc_server_client/proto"
+	gw "github.com/perlou/go-gateway-demo/demo/proxy/grpc_server_client/proto"
 	"github.com/golang/glog"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"google.golang.org/grpc"

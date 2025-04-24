@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/e421083458/gateway_demo/proxy/middleware"
-	"github.com/e421083458/gateway_demo/proxy/proxy"
-	"github.com/e421083458/gateway_demo/proxy/public"
+	"github.com/perlou/go-gateway-demo/proxy/middleware"
+	"github.com/perlou/go-gateway-demo/proxy/proxy"
+	"github.com/perlou/go-gateway-demo/proxy/public"
 	"log"
 	"net/http"
 	"net/url"

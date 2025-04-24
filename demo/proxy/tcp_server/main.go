@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/e421083458/gateway_demo/proxy/tcp_proxy"
+	"github.com/perlou/go-gateway-demo/proxy/tcp_proxy"
 	"log"
 	"net"
 )

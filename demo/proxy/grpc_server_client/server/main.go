@@ -5,7 +5,7 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	pb "github.com/e421083458/gateway_demo/demo/proxy/grpc_server_client/proto"
+	pb "github.com/perlou/go-gateway-demo/demo/proxy/grpc_server_client/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 	"io"
