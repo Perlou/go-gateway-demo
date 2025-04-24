@@ -7,11 +7,11 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"time"
 )
 
 var addr = "127.0.0.1:2002"
 
-// 熔断方案
 func main() {
 	coreFunc := func(c *middleware.SliceRouterContext) http.Handler {
 		rs1 := "http://127.0.0.1:2003/base"
@@ -33,7 +33,8 @@ func main() {
 
 	public.ConfCricuitBreaker(true)
 	sliceRouter := middleware.NewSliceRouter()
-	sliceRouter.Group("/").Use(middleware.CircuitMW())
+	counter, _ := public.NewFlowCountService("local_app", time.Second)
+	sliceRouter.Group("/").Use(middleware.FlowCountMiddleWare(counter), )
 	routerHandler := middleware.NewSliceRouterHandler(coreFunc, sliceRouter)
 	log.Fatal(http.ListenAndServe(addr, routerHandler))
 }

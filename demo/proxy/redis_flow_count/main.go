@@ -1,17 +1,18 @@
 package main
 
 import (
-	"github.com/e421083458/gateway_demo/proxy/middleware"
-	"github.com/e421083458/gateway_demo/proxy/proxy"
-	"github.com/e421083458/gateway_demo/proxy/public"
 	"log"
 	"net/http"
 	"net/url"
+	"time"
+
+	"github.com/perlou/go-gateway-demo/proxy/middleware"
+	"github.com/perlou/go-gateway-demo/proxy/proxy"
+	"github.com/perlou/go-gateway-demo/proxy/public"
 )
 
 var addr = "127.0.0.1:2002"
 
-// 熔断方案
 func main() {
 	coreFunc := func(c *middleware.SliceRouterContext) http.Handler {
 		rs1 := "http://127.0.0.1:2003/base"
@@ -33,7 +34,8 @@ func main() {
 
 	public.ConfCricuitBreaker(true)
 	sliceRouter := middleware.NewSliceRouter()
-	sliceRouter.Group("/").Use(middleware.CircuitMW())
+	redisCounter, _ := public.NewRedisFlowCountService("redis_app", time.Second)
+	sliceRouter.Group("/").Use(middleware.RedisFlowCountMiddleWare(redisCounter))
 	routerHandler := middleware.NewSliceRouterHandler(coreFunc, sliceRouter)
 	log.Fatal(http.ListenAndServe(addr, routerHandler))
 }
